@@ -32,6 +32,11 @@
 ```bash
 pip install python-magic
 ```
+* Для работы в Linux необходимо установить:
+
+```bash
+sudo apt install libmagic1
+```
 
 ### Дополнительные инструменты (по платформе)
 
