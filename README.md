@@ -201,7 +201,10 @@ python Get-ProjectAssemblyAnalysis.py --target-dir /path/to/project --config my_
 
 ## 📞 Контакты и лицензия
 
-Автор: Макаров Дмитрий — [GitHub](https://github.com/DimDimbl4)
+Авторы:
+Макаров Дмитрий — [GitHub](https://github.com/DimDimbl4)
+Валентик Даниил
+Анастасия Семянникова
 Лицензия: MIT — смотрите файл LICENSE
 
 ---
