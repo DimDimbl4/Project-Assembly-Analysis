@@ -31,6 +31,8 @@
 
 ```bash
 pip install python-magic
+pip install python-magic-bin
+pip install portalocker
 ```
 * Для работы в Linux необходимо установить:
 
@@ -54,11 +56,6 @@ sudo apt install libmagic1
     "source_exts": [".c", ".cpp", ".h", ".py"],
     "binary_exts": [".exe", ".dll", ".so"],
     "source_keywords": ["#include", "def ", "class "],
-    "procmon_filters": [
-        "Operation is ReadFile",
-        "Operation is WriteFile",
-        "Operation is CreateFile"
-    ],
     "ignore_patterns": [".git/*", "*.tmp", "__pycache__/*"]
 }
 ```
@@ -105,6 +102,7 @@ python Get-ProjectAssemblyAnalysis.py --target-dir /path/to/project --log-file m
 * `--monitor-output` — файл для логов мониторинга
 * `--linux-tool` — инструмент мониторинга для Linux (inotifywait/strace/auditd)
 * `--auto-auditd` — автоматическая настройка auditd (требуются sudo-права)
+* `--config-procmon` — указание файла конфига для procmon
 
 #### Анализ
 
