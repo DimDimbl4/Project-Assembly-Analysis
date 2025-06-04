@@ -598,7 +598,12 @@ class LogParser:
 
     def parse_strace_log(self, log_path: str) -> Set[str]:
         used_files = set()
-        open_re = re.compile(r'open(?:at)?\([^,]*,\s*"([^"]+)"')
+        # Строки strace могут выглядеть как:
+        #   open("/path/file", O_RDONLY) = 3
+        #   openat(AT_FDCWD, "/path/file", O_RDONLY) = 3
+        # Регулярное выражение ниже извлекает путь из подобных вызовов,
+        # учитывая опциональное "at" и возможные дополнительные параметры.
+        open_re = re.compile(r'open(?:at)?\(.*?"([^"]+)"')
         try:
             with open(log_path, 'r', encoding='utf-8', errors='ignore') as f:
                 for line in f:
